@@ -1,0 +1,38 @@
+Aim: WAP to create a React application using the useState() hook that displays four 
+buttons Red, Blue, Green, and Yellow. When the user clicks a button, display the 
+message "You have selected <Color>" and change the background color of the page to 
+the selected color :
+Class:Computer A
+// App.jsx
+import { useState } from 'react'
+import './App.css'
+function App() {
+ const [colors,setcolors]=useState('--');
+ function handlebtn(c){
+ setcolors(c)
+ document.querySelector("body").style.backgroundColor=c;
+ }
+ return (
+ <>
+ <div className="container">
+ <h1>Choose a Colour</h1>
+ <p id="message">You have selected {colors} colour</p>
+ <div className="buttons">
+ <button className="red" onClick={e=>{handlebtn('Red')}}>
+ Red
+ </button>
+ <button className="green" onClick={e=>{handlebtn('Green')}}>
+ Green
+ </button>
+ <button className="yellow" onClick={e=>{handlebtn('Yellow')}}>
+ Yellow
+ </button>
+ <button className="blue" onClick={e=>{handlebtn('Blue')}}>
+ Blue
+ </button>
+ </div>
+</div>
+ </>
+ )
+}
+export default App
